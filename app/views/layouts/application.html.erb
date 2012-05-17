@@ -7,13 +7,24 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<% if user_signed_in? -%>
-  <div id="user_login_box" style="float:right">
-    <%= current_user.email %> |
-    <%= link_to 'My info', edit_user_registration_path %> |
-    <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="#">Idea thread</a>
+
+        <% if user_signed_in? -%>
+          <div id="user_login_box" style="float:right">
+            <%= current_user.email %> |
+            <%= link_to 'My info', edit_user_registration_path %> |
+            <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
+          </div>
+        <% end -%>     
+
+      </div>
+    </div>
   </div>
-<% end -%>
+
+
 
 
 <div>
