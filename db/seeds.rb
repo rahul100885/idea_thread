@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+roles = YAML::load(File.open("#{Rails.root}/db/seed_files/roles.yml"))
+#Role.delete_all
+ActiveRecord::Base.connection.execute("TRUNCATE TABLE roles")
+Role.create!(roles)
