@@ -1,4 +1,6 @@
 IdeaThread::Application.routes.draw do
+  resources :ideas
+
   devise_for :users
 
   get "home/index"
