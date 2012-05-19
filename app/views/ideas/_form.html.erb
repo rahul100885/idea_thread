@@ -3,8 +3,8 @@
 
   <div class="form-inputs">
     <%= f.input :title %>
-    <%= f.input :description %>
-    <%= f.input :addtional_info %>
+    <%= f.input :description, :input_html => { :cols => 50, :rows => 5 } %>
+    <%= f.input :addtional_info, :input_html => { :cols => 50, :rows => 5 } %>
   </div>
 
   <div class="form-actions">
