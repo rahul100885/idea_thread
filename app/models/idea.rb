@@ -5,5 +5,7 @@ class Idea < ActiveRecord::Base
 
   belongs_to :user, :foreign_key => :created_by
 
+  #TODO - If required will implement counter_cache for performace
   has_many :votes
+
 end
