@@ -11,3 +11,52 @@
  *= require_self
  *= require_tree .
 */
+
+.votes {
+    color: #555555;
+    text-align: center;
+}
+
+.mini-counts {
+    font-size: 190%;
+    font-weight: bold;
+    height: 25px;
+}
+
+.summary h3 {
+    font-size: 120%;
+}
+
+h3 {
+    font-family: Trebuchet MS,Liberation Sans,DejaVu Sans,sans-serif;
+    font-size: 110%;
+    font-weight: bold;
+    line-height: 1.3;
+}
+
+.started { 
+  float:right;
+  width:185px;
+  height:55px;
+  margin-top:5px;
+}
+
+.started {
+  width:185px;
+  color:#999;
+  float:right;
+  line-height:18px;
+}
+
+.relativetime {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+h3 a {
+  color:#333;
+}
+
+.f-left {
+  float:right;
+}
