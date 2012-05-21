@@ -1,5 +1,9 @@
 IdeaThread::Application.routes.draw do
-  resources :ideas
+  resources :ideas do
+    member do
+      get 'vote'
+    end
+  end
 
   devise_for :users
 

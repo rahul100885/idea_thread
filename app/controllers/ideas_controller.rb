@@ -42,6 +42,7 @@ class IdeasController < ApplicationController
   # POST /ideas.json
   def create
     @idea = Idea.new(params[:idea])
+    @idea.created_by = current_user.id
 
     respond_to do |format|
       if @idea.save
@@ -58,6 +59,7 @@ class IdeasController < ApplicationController
   # PUT /ideas/1.json
   def update
     @idea = Idea.find(params[:id])
+    @idea.updated_by = current_user.id
 
     respond_to do |format|
       if @idea.update_attributes(params[:idea])
@@ -79,6 +81,23 @@ class IdeasController < ApplicationController
     respond_to do |format|
       format.html { redirect_to ideas_url }
       format.json { head :no_content }
+    end
+  end
+
+  def vote 
+    @idea = Idea.find(params[:id])
+    @vote = Vote.new
+    @vote.user = current_user
+    @vote.idea = @idea
+
+    respond_to do |format|
+      if @vote.save
+        format.html { redirect_to @idea, notice: 'You voted successfully.' }
+        format.json { render json: @idea, status: :created, location: @idea }
+      else
+        format.html { redirect_to @idea, alert: @vote.errors.full_messages }
+        format.json { render json: @vote.errors, status: :unprocessable_entity }
+      end
     end
   end
 end

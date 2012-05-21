@@ -9,4 +9,12 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
 
   has_and_belongs_to_many :roles
+
+  has_many :ideas
+
+  has_many :votes
+
+  def name
+    self.first_name + " " + self.last_name
+  end
 end

@@ -60,3 +60,23 @@ h3 a {
 .f-left {
   float:right;
 }
+
+.commented {
+    background: none repeat scroll 0 0 #75845C;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.status {
+    float: left;
+    height: 38px;
+    margin: 0 3px 0 0;
+    padding: 5px;
+    width: 63px;
+    margin-top: -5px;
+}
+
+.views {
+    color: #999999;
+    text-align: center;
+}

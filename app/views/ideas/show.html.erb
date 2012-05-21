@@ -1,20 +1,33 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @idea.title %>
-</p>
+<div class="row">
+  <div class="span1">
 
-<p>
-  <b>Description:</b>
-  <%= @idea.description %>
-</p>
+      <div class="votes">
+        <div class="mini-counts"><%= @idea.votes.count %></div>
+        <div>votes</div>
+      <%= button_to 'Vote', vote_idea_path(@idea), :method => "get", :class => "btn btn-success" %>
+      </div>
+  </div>
+  <div class="span11">
+    <p>
+      <b>Title:</b>
+      <%= @idea.title %>
+    </p>
 
-<p>
-  <b>Addtional info:</b>
-  <%= @idea.addtional_info %>
-</p>
+    <p>
+      <b>Description:</b>
+      <%= @idea.description %>
+    </p>
+
+    <p>
+      <b>Addtional info:</b>
+      <%= @idea.addtional_info %>
+    </p>
 
 
-<%= link_to 'Edit', edit_idea_path(@idea) %> |
-<%= link_to 'Back', ideas_path %>
+    <%= link_to 'Edit', edit_idea_path(@idea) %> |
+    <%= link_to 'Back', ideas_path %>
+
+  </div>
+</div>
