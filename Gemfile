@@ -16,6 +16,12 @@ gem 'cancan'
 # Added for simple form 
 gem 'simple_form'
 
+# Added for commeting system
+gem 'acts_as_commentable_with_threading'
+
+# Soft delete system
+gem 'paper_trail'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
