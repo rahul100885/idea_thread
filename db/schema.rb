@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120522094601) do
+ActiveRecord::Schema.define(:version => 20120522101415) do
 
   create_table "comments", :force => true do |t|
     t.integer  "commentable_id",   :default => 0
@@ -29,6 +29,21 @@ ActiveRecord::Schema.define(:version => 20120522094601) do
 
   add_index "comments", ["commentable_id"], :name => "index_comments_on_commentable_id"
   add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
+
+  create_table "documents", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "attachable_id"
+    t.string   "attachable_type"
+    t.string   "data_file_name"
+    t.string   "data_content_type"
+    t.integer  "data_file_size"
+    t.datetime "data_updated_at"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
+  add_index "documents", ["attachable_id"], :name => "index_documents_on_attachable_id"
 
   create_table "ideas", :force => true do |t|
     t.string   "title"

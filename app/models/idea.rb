@@ -1,5 +1,5 @@
 class Idea < ActiveRecord::Base
-  attr_accessible :addtional_info, :description, :title
+  attr_accessible :addtional_info, :description, :title,  :documents_attributes
 
   validates :title, :description, :presence => true
 
@@ -11,4 +11,9 @@ class Idea < ActiveRecord::Base
   acts_as_commentable
 
   has_paper_trail
+
+  has_many :documents, :as => :attachable
+
+  accepts_nested_attributes_for :documents, :allow_destroy => true
+
 end
